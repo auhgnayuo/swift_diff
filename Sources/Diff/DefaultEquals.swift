@@ -53,13 +53,13 @@ public func defaultEquals(_ a: Any, _ b: Any) -> Bool {
     if let intA = a as? Int, let intB = b as? Int {
         return intA == intB
     }
-    // Compare doubles with tolerance
+    // Compare doubles
     if let doubleA = a as? Double, let doubleB = b as? Double {
-        return abs(doubleA - doubleB) < 1e-9
+        return doubleA == doubleB
     }
-    // Compare floats with tolerance
+    // Compare floats
     if let floatA = a as? Float, let floatB = b as? Float {
-        return abs(floatA - floatB) < 1e-6
+        return floatA == floatB
     }
     // Compare NSNumber, handling boolean and numeric types
     if let numA = a as? NSNumber, let numB = b as? NSNumber {

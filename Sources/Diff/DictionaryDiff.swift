@@ -12,8 +12,8 @@ public extension Dictionary {
         // Collect all unique keys from both dictionaries
         let allKeys = Set(self.keys).union(other.keys)
         for key in allKeys {
-            let hasSelf = self[key] != nil
-            let hasOther = other[key] != nil
+            let hasSelf = self.keys.contains(key)
+            let hasOther = other.keys.contains(key)
             switch (hasSelf, hasOther) {
             case (true, false):
                 // Key exists in self but not in other: deletion

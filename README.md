@@ -1,12 +1,12 @@
-# Diff
+# Diff (Swift)
 
-A Swift library for calculating and applying diffs (changes) between arrays and dictionaries. It provides a unified interface to generate minimal change sets (additions, deletions, updates, movements) and apply them to transform collections efficiently.
+A cross-language library for calculating and applying diffs (changes) between collections (arrays, dictionaries). It provides a unified interface to generate minimal change sets (additions, deletions, updates, movements) and efficiently transform collections.
 
 ## Features
-- Compute minimal diffs between two arrays or dictionaries
-- Apply diffs (patch) to arrays or dictionaries
+- Compute minimal diffs between two collections (arrays, dictionaries)
+- Apply diffs (patch) to collections
 - Supports additions, deletions, updates, and movements
-- Simple API and extensible design
+- Simple, extensible, and consistent API
 
 ## Installation
 Add this to your `Package.swift`:
@@ -56,6 +56,20 @@ print(diffs) // [Update(b, 3), Addition(c, 4)]
 // Apply the diff
 let patched = left.applyDiffs(diffs)
 print(patched) // ["a": 1, "b": 3, "c": 4]
+```
+
+## API
+
+- `Diff`: Abstract base type for all diff operations.
+- `Update`: Represents an update operation.
+- `Addition`: Represents an addition operation.
+- `Deletion`: Represents a deletion operation.
+- `Movement`: Represents a movement operation.
+
+## Running Tests
+
+```sh
+swift test
 ```
 
 ## License
